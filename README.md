@@ -1,3 +1,27 @@
+## #18 alphabetPosition
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+"a" = 1, "b" = 2, etc.
+
+```js
+//js code
+const alphabetPosition = (str) => {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    let code = str.toUpperCase().charCodeAt(i);
+    if (code > 64 && code < 91) { 
+			result = result + (code - 64) + " ";
+			}
+  }
+
+  return result.slice(0, result.length - 1);
+}
+
+```
+
 ## #17 Композиция функций 
 
 Реализуйте и экспортируйте по умолчанию функцию compose, которая принимает на вход две других одноаргументных функции и возвращает новую функцию. Эта новая функция также принимает на вход один параметр и при вызове применяет его последовательно к переданным функциям в обратном порядке.
